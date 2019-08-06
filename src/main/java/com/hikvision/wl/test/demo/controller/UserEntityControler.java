@@ -16,6 +16,11 @@ public class UserEntityControler {
     @Autowired
     private UserMapper userMapper;
 
+    @RequestMapping("/hello")
+    public String say(){
+        return "just a test";
+    }
+
     @RequestMapping("/getUsers")
     public List<UserEntity> getUsers()
     {		List<UserEntity> users=userMapper.getAll();

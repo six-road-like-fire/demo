@@ -21,7 +21,7 @@ public class UserEntityControler {
         return "just a test";
     }
 
-    @RequestMapping("/hell1")
+    @RequestMapping("/hell4554")
     public String say1(){
         return "jus1t a test";
     }

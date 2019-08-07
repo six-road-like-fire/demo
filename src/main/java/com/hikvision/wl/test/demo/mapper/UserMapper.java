@@ -9,6 +9,10 @@ public interface UserMapper {
 
     UserEntity getOne(Long id);
 
+    UserEntity login(String userName,String password);
+
+    UserEntity userVerify(String userName);
+
     void insert(UserEntity user);
 
     void update(UserEntity user);

@@ -38,7 +38,7 @@ public class UserEntityControler {
     }
 
     @RequestMapping(value="update")
-        public void update(UserEntity user) {
+    public void update(UserEntity user) {
         userMapper.update(user);
     }
 

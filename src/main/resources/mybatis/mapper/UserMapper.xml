@@ -16,18 +16,31 @@
     <select id="getAll" resultMap="BaseResultMap">
         SELECT
         <include refid="Base_Column_List"/>
-        FROM Wl_test.UserEntity
+        FROM UserEntity
     </select>
     <select id="getOne" parameterType="java.lang.Integer" resultMap="BaseResultMap">
         SELECT
         <include refid="Base_Column_list"/>
-        FROM  Wl_test.UserEntity
+        FROM UserEntity
         where id=#{id}
+    </select>
+
+    <select id="userVerify" parameterType="java.lang.String" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_list"/>
+        FROM UserEntity
+        where userName=#{userName}
+    </select>
+
+    <select id="login" parameterType="com.hikvision.wl.test.demo.model.UserEntity" resultMap="BaseResultMap">
+         SELECT  <include refid="Base_Column_List"/>
+        FROM UserEntity
+        WHERE userName = #{userName} AND password = #{password}
     </select>
 
     <insert id="insert" parameterType="com.hikvision.wl.test.demo.model.UserEntity">
         INSERT INTO
-        Wl_test.UserEntity
+        UserEntity
         (userName,password,user_sex)
         VALUES
         (#{userName},#{password},#{userSex})
@@ -35,7 +48,7 @@
 
     <update id="update" parameterType="com.hikvision.wl.test.demo.model.UserEntity">
         UPDATE
-       Wl_test.UserEntity
+      UserEntity
         set
         userName=#{userName}
         password=#{password}
@@ -45,7 +58,7 @@
 
     <delete id="delete" parameterType="java.lang.Integer">
         DELETE FROM
-            Wl_test.UserEntity
+           UserEntity
         where
             id=#{id}
     </delete>

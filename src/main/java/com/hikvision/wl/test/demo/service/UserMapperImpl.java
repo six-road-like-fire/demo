@@ -23,6 +23,16 @@ public class UserMapperImpl implements UserMapper {
     }
 
     @Override
+    public UserEntity login(String userName,String password){
+        return userMapper.login(userName,password);
+    }
+
+    @Override
+    public int userVerify(String userName){
+        return userMapper.userVerify(userName);
+    }
+
+    @Override
     public  void insert(UserEntity user){
         userMapper.insert(user);
     }

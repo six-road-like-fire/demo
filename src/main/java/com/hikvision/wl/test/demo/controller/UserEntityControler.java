@@ -21,6 +21,11 @@ public class UserEntityControler {
         return "just a test";
     }
 
+    @RequestMapping("/hell1")
+    public String say1(){
+        return "jus1t a test";
+    }
+
     @RequestMapping("/getUsers")
     public List<UserEntity> getUsers()
     {		List<UserEntity> users=userMapper.getAll();

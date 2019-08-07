@@ -28,7 +28,7 @@ public class UserMapperImpl implements UserMapper {
     }
 
     @Override
-    public int userVerify(String userName){
+    public UserEntity userVerify(String userName){
         return userMapper.userVerify(userName);
     }
 

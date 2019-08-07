@@ -1,6 +1,10 @@
 package com.hikvision.wl.test.demo.model;
 
+import org.springframework.stereotype.Component;
+
+import javax.persistence.Entity;
 import java.io.Serializable;
+
 
 public class UserEntity implements  Serializable {
     private static final long serialVersionUID=1L;

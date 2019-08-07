@@ -8,18 +8,15 @@
         <result column="user_sex" property="userSex" jdbcType="VARCHAR"/>
         <result column="nick_name" property="nickName" jdbcType="VARCHAR"/>
     </resultMap>
-
     <sql id="Base_Column_List">
         id,userName,password,user_sex,nick_name
     </sql>
-
     <select id="userVerify" parameterType="java.lang.String" resultMap="BaseResultMap">
         SELECT
         <include refid="Base_Column_list"/>
         FROM UserEntity
         where userName=#{userName}
     </select>
-
     <select id="login" parameterType="com.hikvision.wl.test.demo.model.UserEntity" resultMap="BaseResultMap">
         SELECT  <include refid="Base_Column_List"/>
         FROM UserEntity

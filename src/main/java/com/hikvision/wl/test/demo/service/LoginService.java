@@ -1,8 +1,8 @@
-package com.hikvision.wl.test.demo.mapper;
+package com.hikvision.wl.test.demo.service;
 
 import com.hikvision.wl.test.demo.model.UserEntity;
 
-public interface LoginMapper {
+public interface LoginService {
     UserEntity login(String userName, String password);
 
     UserEntity userVerify(String userName);

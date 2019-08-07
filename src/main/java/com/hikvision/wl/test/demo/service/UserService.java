@@ -1,12 +1,10 @@
-package com.hikvision.wl.test.demo.mapper;
+package com.hikvision.wl.test.demo.service;
 
 import com.hikvision.wl.test.demo.model.UserEntity;
 
-
 import java.util.List;
 
-
-public interface UserMapper {
+public interface UserService {
     List<UserEntity> getAll();
 
     UserEntity getOne(Long id);

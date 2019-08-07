@@ -1,8 +1,10 @@
 package com.hikvision.wl.test.demo.controller;
 
-import com.hikvision.wl.test.demo.mapper.LoginMapper;
-import com.hikvision.wl.test.demo.mapper.UserMapper;
+import com.hikvision.wl.test.demo.dao.LoginDao;
+import com.hikvision.wl.test.demo.dao.UserDao;
 import com.hikvision.wl.test.demo.model.UserEntity;
+import com.hikvision.wl.test.demo.service.LoginService;
+import com.hikvision.wl.test.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
@@ -13,10 +15,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @RequestMapping("/login")
 public class LoginController {
-
-    @Autowired  UserMapper userMapper;
+  //  private static final Logger logger = LoggerFactory.getLogger(UserControler.class);
     @Autowired
-    private LoginMapper loginMapper;
+    private UserService userService;
+    @Autowired
+    private LoginService loginService;
 
     @RequestMapping("/loginHtml")
     public String loginHtml(){
@@ -25,7 +28,7 @@ public class LoginController {
 
     @RequestMapping("/userLogin")
     public String userLogin(@RequestParam("userName") String username, @RequestParam("password") String password){
-        UserEntity user=loginMapper.login(username,password);
+        UserEntity user=loginService.login(username,password);
         if(user!=null){
             return "index";
         }else{
@@ -45,11 +48,11 @@ public class LoginController {
                              @RequestParam("userSex") String userSex,
                              @RequestParam("nickName") String nickName
                         ){
-        UserEntity user=loginMapper.userVerify(userName);
+        UserEntity user=loginService.userVerify(userName);
         if(user!=null){
             return "该用户已存在";
         }else{
-            userMapper.insert(new UserEntity(userName,password,userSex,nickName));
+            userService.insert(new UserEntity(userName,password,userSex,nickName));
             return "注册成功";
         }
     }

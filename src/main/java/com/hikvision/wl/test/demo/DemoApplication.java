@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
-@MapperScan("com.hikvision.wl.test.demo.mapper")//启动类扫面mapper包
+@MapperScan("com.hikvision.wl.test.demo.dao")//启动类扫面mapper包
 public class DemoApplication {
 
     public static void main(String[] args) {

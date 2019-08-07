@@ -9,7 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.annotation.Resource;
 
 @Service
-@Transactional
+
 public class LoginServiceImpl  implements LoginService {
     @Autowired
     private LoginDao loginDao;
@@ -20,7 +20,7 @@ public class LoginServiceImpl  implements LoginService {
     }
 
     @Override
-    public UserEntity userVerify(String userName){
+    public UserEntity userVerify(String userName) {
         return loginDao.userVerify(userName);
     }
 }

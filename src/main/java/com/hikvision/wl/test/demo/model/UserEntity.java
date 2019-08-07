@@ -15,6 +15,7 @@ public class UserEntity implements  Serializable {
     private String nickName;
 
     public UserEntity() {
+        super();
     }
 
     public UserEntity(String userName, String password, String userSex, String nickName) {

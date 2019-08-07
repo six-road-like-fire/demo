@@ -12,6 +12,7 @@ public class UserMapperImpl implements UserMapper {
 
     @Autowired
     private UserMapper userMapper;
+
     @Override
     public List<UserEntity> getAll(){
         return  userMapper.getAll();
@@ -20,16 +21,6 @@ public class UserMapperImpl implements UserMapper {
     @Override
     public  UserEntity getOne(Long id){
         return userMapper.getOne(id);
-    }
-
-    @Override
-    public UserEntity login(String userName,String password){
-        return userMapper.login(userName,password);
-    }
-
-    @Override
-    public UserEntity userVerify(String userName){
-        return userMapper.userVerify(userName);
     }
 
     @Override

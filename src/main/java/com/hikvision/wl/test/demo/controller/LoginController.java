@@ -1,5 +1,6 @@
 package com.hikvision.wl.test.demo.controller;
 
+import com.hikvision.wl.test.demo.mapper.LoginMapper;
 import com.hikvision.wl.test.demo.mapper.UserMapper;
 import com.hikvision.wl.test.demo.model.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class LoginController {
 
     @Autowired  UserMapper userMapper;
+    @Autowired
+    private LoginMapper loginMapper;
 
     @RequestMapping("/loginHtml")
     public String loginHtml(){
@@ -21,8 +24,8 @@ public class LoginController {
     }
 
     @RequestMapping("/userLogin")
-    public String userLogin(@RequestParam("userName") String username, @RequestParam("password") String password, HttpRequest request){
-        UserEntity user=userMapper.login(username,password);
+    public String userLogin(@RequestParam("userName") String username, @RequestParam("password") String password){
+        UserEntity user=loginMapper.login(username,password);
         if(user!=null){
             return "index";
         }else{
@@ -42,7 +45,7 @@ public class LoginController {
                              @RequestParam("userSex") String userSex,
                              @RequestParam("nickName") String nickName
                         ){
-        UserEntity user=userMapper.userVerify(userName);
+        UserEntity user=loginMapper.userVerify(userName);
         if(user!=null){
             return "该用户已存在";
         }else{

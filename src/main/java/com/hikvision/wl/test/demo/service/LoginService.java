@@ -3,7 +3,7 @@ package com.hikvision.wl.test.demo.service;
 import com.hikvision.wl.test.demo.model.UserEntity;
 
 public interface LoginService {
-    UserEntity login(String userName, String password);
+    UserEntity login(String username, String password);
 
-    UserEntity userVerify(String userName);
+    UserEntity userVerify(String username);
 }

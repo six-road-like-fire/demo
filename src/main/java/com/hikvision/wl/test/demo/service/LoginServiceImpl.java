@@ -12,12 +12,12 @@ public class LoginServiceImpl  implements LoginService {
     private LoginDao loginDao;
 
     @Override
-    public UserEntity login(String userName, String password){
-        return loginDao.login(userName,password);
+    public UserEntity login(String username, String password){
+        return loginDao.login(username,password);
     }
 
     @Override
-    public UserEntity userVerify(String userName) {
-        return loginDao.userVerify(userName);
+    public UserEntity userVerify(String username) {
+        return loginDao.userVerify(username);
     }
 }

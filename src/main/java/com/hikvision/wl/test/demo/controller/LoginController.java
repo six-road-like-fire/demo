@@ -27,7 +27,7 @@ public class LoginController {
     }
 
     @RequestMapping("/userLogin")
-    public String userLogin(@RequestParam("userName") String username, @RequestParam("password") String password){
+    public String userLogin(@RequestParam("username") String username, @RequestParam("password") String password){
         UserEntity user=loginService.login(username,password);
         if(user!=null){
             return "index";
@@ -43,16 +43,16 @@ public class LoginController {
 
     @ResponseBody
     @RequestMapping("/usergister")
-    public String usergister(@RequestParam("userName") String userName,
+    public String usergister(@RequestParam("username") String username,
                              @RequestParam("password") String password,
                              @RequestParam("userSex") String userSex,
                              @RequestParam("nickName") String nickName
                         ){
-        UserEntity user=loginService.userVerify(userName);
+        UserEntity user=loginService.userVerify(username);
         if(user!=null){
             return "该用户已存在";
         }else{
-            userService.insert(new UserEntity(userName,password,userSex,nickName));
+            userService.insert(new UserEntity(username,password,userSex,nickName));
             return "注册成功";
         }
     }

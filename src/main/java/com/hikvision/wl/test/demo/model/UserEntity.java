@@ -9,7 +9,7 @@ import java.io.Serializable;
 public class UserEntity implements  Serializable {
     private static final long serialVersionUID=1L;
     private Long id;
-    private String userName;
+    private String username;
     private String password;
     private String userSex;
     private String nickName;
@@ -18,16 +18,16 @@ public class UserEntity implements  Serializable {
         super();
     }
 
-    public UserEntity(String userName, String password, String userSex, String nickName) {
-        this.userName = userName;
+    public UserEntity(String username, String password, String userSex, String nickName) {
+        this.username = username;
         this.password = password;
         this.userSex = userSex;
         this.nickName = nickName;
     }
 
-    public UserEntity(Long id, String userName, String password, String userSex, String nickName) {
+    public UserEntity(Long id, String username, String password, String userSex, String nickName) {
         this.id = id;
-        this.userName = userName;
+        this.username = username;
         this.password = password;
         this.userSex = userSex;
         this.nickName = nickName;
@@ -41,12 +41,12 @@ public class UserEntity implements  Serializable {
         this.id = id;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getusername() {
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setusername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
@@ -77,7 +77,7 @@ public class UserEntity implements  Serializable {
     public String toString() {
         return "UserEntity{" +
                 "id=" + id +
-                ", userName='" + userName + '\'' +
+                ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", userSex='" + userSex + '\'' +
                 ", nickName='" + nickName + '\'' +
